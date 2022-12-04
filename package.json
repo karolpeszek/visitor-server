@@ -1,0 +1,29 @@
+{
+  "name": "visitor-server",
+  "version": "1.0.0",
+  "description": "Websockets and data server for the visitor-client website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karolpeszek/visitor-server.git"
+  },
+  "author": "Karol Peszek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karolpeszek/visitor-server/issues"
+  },
+  "homepage": "https://github.com/karolpeszek/visitor-server#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-sanitizer": "^1.0.6",
+    "express-validator": "^6.14.2",
+    "formidable": "^2.1.1",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "sanitize": "^2.1.2",
+    "ws": "^8.11.0"
+  }
+}
