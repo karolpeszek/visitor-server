@@ -23,7 +23,7 @@ function broadcast(message) {
 function addGuest(guest) {
     guestList.push(guest);
     let content = JSON.stringify(guestList);
-    fs.writeFile('./guests.json', content, err => {
+    fs.writeFile(__dirname + '/guests.json', content, err => {
         if (err) {
             console.error(err);
         }
@@ -56,7 +56,8 @@ app.post('/submit', [
             let guest = {
                 "name": null,
                 "subject": null,
-                "text": null
+                "text": null,
+                "verified": false
             };
 
             try {
@@ -86,7 +87,9 @@ app.post('/submit', [
 app.get('/list', function(req, res) {
     let response = "";
     guestList.forEach(guest => {
-        response += '<div class="mb-3"><label><b>[' + guest.name + ']:</b> ' + guest.subject + '</label><br>' +
+        response += '<div class="mb-3">';
+        if (guest.verified) response += '<img src="verified.png" height="16px" width="16px" style="margin: 4px;">';
+        response += '<label style = "vertical-align: center;"><b>[' + guest.name + ']:</b> ' + guest.subject + '</label><br>' +
             guest.text + '</div><hr>';
     });
     if (response != "") response = response.slice(0, -4);
