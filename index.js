@@ -88,7 +88,7 @@ app.get('/list', function(req, res) {
     let response = "";
     guestList.forEach(guest => {
         response += '<div class="mb-3">';
-        if (guest.verified) response += '<img src="verified.png" height="16px" width="16px" style="margin: 4px;">';
+        if (guest.verified) response += '<img src="verified.png" height="16px" width="16px" title="Ten wpis jest zweryfikowany i pochodzi ze sprawdzonego źródła." style="margin: 4px;">';
         response += '<label style = "vertical-align: center;"><b>[' + guest.name + ']:</b> ' + guest.subject + '</label><br>' +
             guest.text + '</div><hr>';
     });
